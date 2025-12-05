@@ -1,0 +1,29 @@
+:root {
+    /* 라이트 모드 */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --sub-text-color: #555555;
+    --header-bg: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(0, 0, 0, 0.2);
+
+    /* 그림자 포인트 컬러 */
+    --accent-shadow-show: #68a063;
+    --accent-shadow-cast: #a06380;
+    --accent-shadow-hype: #a08263;
+    --accent-shadow-link: #6370a0;
+}
+
+/* 다크 모드 (기본) */
+[data-theme='dark'] {
+    --bg-color: #201E1E;
+    --text-color: #ffffff;
+    --sub-text-color: #cccccc;
+    --header-bg: rgba(0, 0, 0, 0.3);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
