@@ -1,0 +1,85 @@
+/* 푸터 전체 컨테이너 */
+.footer {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 40px 60px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: transparent;
+    gap: 64px;
+}
+
+/* 좌측: 로고 + 슬로건 + 아이콘 */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 300px;
+}
+
+.footer-logo {
+    font-family: "Irish Grover", cursive;
+    font-size: 24px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.footer-slogan {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--sub-text-color);
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 16px;
+    font-size: 22px;
+    margin-top: 8px;
+    color: var(--text-color);
+}
+
+.footer-icons span {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* 우측: 메뉴 3단 */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+    margin-left: auto;
+    text-align: left;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column-title {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--sub-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--text-color);
+}

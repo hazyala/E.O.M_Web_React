@@ -1,0 +1,92 @@
+/* 섹션 전체 레이아웃 */
+.show-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 40px;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 중앙 컨테이너 */
+.show-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 10%;
+}
+
+/* 이미지 영역 */
+.show-image-wrapper {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.show-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 텍스트 영역 */
+.show-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: var(--text-color);
+    align-items: flex-start;
+}
+
+/* 제목 스타일 */
+.show-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0px 7px 10px var(--accent-shadow-show);
+}
+
+/* 설명글 스타일 */
+.show-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--sub-text-color);
+    margin: 0;
+}
+
+/* 버튼 스타일 */
+.show-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--text-color);
+    border-radius: 50px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}

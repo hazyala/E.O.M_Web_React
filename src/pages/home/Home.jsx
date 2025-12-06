@@ -1,9 +1,22 @@
 import React from 'react';
+import HeroSection from './HeroSection';
+import ShowSection from './ShowSection';
+import CastSection from './CastSection';
+import HypeSection from './HypeSection';
+import LinkSection from './LinkSection';
 
 export default function Home() {
     return (
-        <div style={{ paddingTop: '100px', textAlign: 'center' }}>
-            <h1>Home Page Test</h1>
-        </div>
+        <main>
+            <HeroSection />
+
+            <ShowSection />
+
+            <CastSection />
+
+            <HypeSection />
+
+            <LinkSection />
+        </main>
     );
 }

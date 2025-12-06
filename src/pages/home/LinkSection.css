@@ -1,0 +1,110 @@
+/* 섹션 전체 컨테이너 */
+.link-section {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 400px 0 120px;
+    background-color: transparent;
+    height: auto;
+    /* 섹션 경계를 넘어가는 이미지를 허용하여 겹치게 함 */
+    overflow: visible;
+}
+
+/* 중앙 인물 이미지*/
+.link-background {
+    position: absolute;
+    top: -250px;
+    /* calc()를 사용하여 중앙(50% - 600px)을 잡고, 여기에 화면 너비의 2% (2vw)만큼 오른쪽으로 이동시켜 시각적 중앙을 맞춤*/
+    left: calc(50% - 600px + -6vw);
+    transform: none;
+    z-index: 1;
+    width: 1200px;
+    height: auto;
+    pointer-events: none;
+}
+
+.link-background img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* 텍스트 + 버튼 정렬을 위한 중앙 컨테이너 */
+.link-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* 좌측 텍스트 블럭 */
+.link-left {
+    width: 300px;
+    color: var(--text-color);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* 우측 텍스트 블럭 */
+.link-right {
+    width: 300px;
+    color: var(--text-color);
+    text-align: left;
+    flex-shrink: 0;
+}
+
+/* 제목 스타일 */
+.link-content .title {
+    text-shadow: 0px 7px 10px var(--accent-shadow-link);
+    font-family: 'Roboto', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+/* 설명 스타일 */
+.link-content .desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--sub-text-color);
+}
+
+/* 중앙 버튼 위치 */
+.button-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+/* 버튼 스타일 */
+.link-content .show-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--text-color);
+    border-radius: 50px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    width: fit-content;
+}

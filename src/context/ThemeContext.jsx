@@ -3,21 +3,23 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('dark'); // 기본값: 다크모드
+    // 기본값 'dark'
+    const [theme, setTheme] = useState(
+        localStorage.getItem('theme') || 'dark'
+    );
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('app-theme');
-        if (savedTheme) setTheme(savedTheme);
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('app-theme', theme);
-    }, [theme]);
-
+    // 테마 전환 함수
     const toggleTheme = () => {
-        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+        setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
     };
+
+    // 3. theme 상태가 변경될 때마다 실행되는 로직
+    useEffect(() => {
+        // 로컬 스토리지에 테마 저장
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-theme', theme);
+
+    }, [theme]);
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>

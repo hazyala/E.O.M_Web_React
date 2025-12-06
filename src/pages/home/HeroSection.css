@@ -1,0 +1,72 @@
+/* 히어로 섹션 전체 틀 */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 120vh;
+    overflow: hidden;
+}
+
+/* 배경 이미지 */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.9);
+}
+
+/* 텍스트 위치 잡기 */
+.label {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* 타자기 글씨 스타일 */
+.typewriter-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 9.5vw;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    white-space: pre-line;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 1s ease;
+}
+
+/* 타이핑이 끝났을 때의 효과 */
+.typewriter-text.finished {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* 커서 깜빡임 애니메이션 */
+.cursor {
+    display: inline-block;
+    font-weight: 100;
+    margin-left: 10px;
+    animation: blink 1s step-end infinite;
+    color: #ffffff;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/*!* 하단 여백 박스 *!*/
+/*.hero-rectangle {*/
+/*    width: 100%;*/
+/*    height: 200px; !* 높이 살짝 조정 *!*/
+/*    background-color: var(--bg-color);*/
+/*    transition: background-color 0.3s ease;*/
+/*    position: relative; !* z-index 적용을 위해 *!*/
+/*    z-index: 2; !* 이미지보다 위에 오도록 *!*/
+/*}*/
