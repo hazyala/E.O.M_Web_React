@@ -8,11 +8,11 @@
 
 ---
 
-## ✨ Live Site
+## ✨ Live Site and Link 🔗
 
 - **React Edition:** https://hazyala.github.io/E.O.M_Web_React
 - **Original Edition:** https://hazyala.github.io/E.O.M_WEB/
-
+- **Original Edition GitHub Repository:** https://github.com/hazyala/E.O.M_WEB.git
 ---
 
 ## 📸 프로젝트 미리보기
