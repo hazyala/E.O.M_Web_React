@@ -1,18 +1,28 @@
+/* ============================================
+   로그인 페이지 전체 레이아웃
+   ============================================ */
+
 :root {
     --primary-color: #fbfbfb;
     --red-glow: 255, 0, 0;
 }
 
+/* 페이지 전체 컨테이너 */
 .login-page {
     font-family: 'Irish Grover', sans-serif;
-    color: white;
     display: flex;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     overflow: hidden;
+    color: white;
 }
 
-/* 좌측 이미지 - 항상 70% */
+
+/* ============================================
+   좌측 영역: 타이핑 애니메이션 + 배경 이미지
+   ============================================ */
+
+/* 좌측 시각 영역 */
 .login-visual {
     flex: 0 0 70%;
     height: 100%;
@@ -24,15 +34,17 @@
     text-align: center;
     padding: 2rem;
     box-sizing: border-box;
-    /* 회원가입 때는 오른쪽으로 */
+    /* 회원가입 모드 시 슬라이드 애니메이션 */
     transform: translateX(0);
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 회원가입 모드: 좌측 영역 슬라이드 오른쪽으로 이동 */
 .login-page.is-signup .login-visual {
-    transform: translateX(calc(30% / 0.7)); /* 폼의 30%만큼 오른쪽으로 */
+    transform: translateX(calc(30% / 0.7));
 }
 
+/* 타이핑 애니메이션 제목 */
 .login-visual h1 {
     font-size: 3.5rem;
     color: var(--primary-color);
@@ -41,11 +53,13 @@
     line-height: 1.2;
 }
 
+/* 제목 링크 스타일 */
 .login-visual h1 a {
     color: inherit;
     text-decoration: none;
 }
 
+/* 서브 제목 */
 .login-visual p {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
@@ -53,7 +67,12 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* 우측 폼 - 항상 30% */
+
+/* ============================================
+   우측 영역: 로그인/회원가입 폼 컨테이너
+   ============================================ */
+
+/* 폼 컨테이너 */
 .container {
     flex: 0 0 30%;
     background: rgba(0, 0, 0, 0.8);
@@ -65,43 +84,53 @@
     padding: 2rem;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
-    overflow-y: auto;
-    /* 회원가입 때는 왼쪽으로 */
     transform: translateX(0);
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
 }
 
+/* 회원가입 모드: 우측 영역 슬라이드 왼쪽으로 이동 */
 .login-page.is-signup .container {
-    transform: translateX(calc(-70% / 0.3)); /* 이미지의 70%만큼 왼쪽으로 */
+    transform: translateX(calc(-70% / 0.3));
     border-left: none;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 폼 요소 */
 .container form {
     width: 100%;
     max-width: 350px;
 }
 
+/* 폼 제목 */
 .form-title {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
     text-align: center;
     padding-bottom: 20px;
+    margin-bottom: 0.5rem;
 }
 
+/* 폼 부제목 */
 .subtitle {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
+
+/* ============================================
+   폼 입력 필드 및 아이콘
+   ============================================ */
+
+/* 폼 그룹 */
 .form-group {
     margin-bottom: 1.2rem;
     position: relative;
 }
 
+/* 입력 필드 아이콘 */
 .form-group svg {
     position: absolute;
     left: 12px;
@@ -113,24 +142,27 @@
     z-index: 1;
 }
 
+/* 입력 필드 기본 스타일 */
 .form-group input {
     width: 100%;
-    padding: 11px 10px 11px 38px;
     height: 42px;
+    padding: 11px 10px 11px 38px;
     background: #1f1f1f;
     border: 1px solid #444;
     border-radius: 6px;
     color: white;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
     box-sizing: border-box;
     line-height: 1;
+    transition: all 0.3s ease;
 }
 
+/* 입력 필드 플레이스홀더 */
 .form-group input::placeholder {
     color: #888;
 }
 
+/* 입력 필드 포커스 상태 */
 .form-group input:focus {
     border-color: rgba(var(--red-glow), 0.7);
     box-shadow: 0 0 15px rgba(var(--red-glow), 0.6);
@@ -138,28 +170,31 @@
     background: rgba(31, 31, 31, 0.8);
 }
 
+/* 비밀번호 표시/숨기기 토글 버튼 */
 .toggle-password {
     position: absolute;
     right: 12px;
     top: 12px;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    padding: 0;
     background: none;
     border: none;
     font-size: 1rem;
     cursor: pointer;
-    padding: 0;
-    width: 18px;
-    height: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
     transition: transform 0.2s ease;
 }
 
+/* 토글 버튼 호버 */
 .toggle-password:hover {
     transform: scale(1.1);
 }
 
+/* 에러 메시지 */
 .error {
     font-size: 0.75rem;
     color: #ff4444;
@@ -167,6 +202,12 @@
     min-height: 1rem;
 }
 
+
+/* ============================================
+   로그인 옵션 및 버튼
+   ============================================ */
+
+/* 로그인 옵션 컨테이너 */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -175,6 +216,7 @@
     font-size: 0.85rem;
 }
 
+/* 로그인 상태 유지 체크박스 */
 .form-options label {
     display: flex;
     align-items: center;
@@ -186,6 +228,7 @@
     cursor: pointer;
 }
 
+/* 비밀번호 찾기 링크 */
 .form-options a {
     color: #888;
     text-decoration: none;
@@ -196,6 +239,7 @@
     color: rgba(var(--red-glow), 0.7);
 }
 
+/* 제출 버튼 */
 .submit-btn {
     width: 100%;
     padding: 11px;
@@ -206,10 +250,11 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
+/* 제출 버튼 호버 */
 .submit-btn:hover {
     background-color: rgb(var(--red-glow));
     color: var(--primary-color);
@@ -218,11 +263,18 @@
     transform: translateY(-2px);
 }
 
+/* 제출 버튼 활성 */
 .submit-btn:active {
     transform: translateY(2px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+
+/* ============================================
+   로그인/회원가입 전환 링크
+   ============================================ */
+
+/* 계정 전환 링크 컨테이너 */
 .signup-link {
     text-align: center;
     font-size: 0.85rem;
@@ -230,14 +282,15 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* 회원가입/로그인 토글 */
 .signup-toggle {
     margin-left: 0.3rem;
     color: var(--primary-color);
-    cursor: pointer;
     font-weight: bold;
     text-decoration: underline;
-    transition: color 0.3s ease;
+    cursor: pointer;
     display: inline-block;
+    transition: color 0.3s ease;
 }
 
 .signup-toggle:hover {
@@ -246,4 +299,68 @@
 
 .signup-toggle:active {
     opacity: 0.8;
+}
+
+
+/* ============================================
+   라이트 모드 스타일
+   ============================================ */
+
+/* 라이트 모드: 폼 컨테이너 */
+[data-theme='light'] .container {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    border-left-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .login-page.is-signup .container {
+    border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 라이트 모드: 입력 필드 */
+[data-theme='light'] .form-group input {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+[data-theme='light'] .form-group input:focus {
+    background: #ffffff;
+    border-color: rgba(var(--red-glow), 0.7);
+    box-shadow: 0 0 15px rgba(var(--red-glow), 0.4);
+    outline: none;
+}
+
+[data-theme='light'] .form-group input::placeholder {
+    color: #555555;
+}
+
+/* 라이트 모드: 아이콘 */
+[data-theme='light'] .form-group svg {
+    fill: #000000;
+}
+
+/* 라이트 모드: 텍스트 색상 */
+[data-theme='light'] .subtitle,
+[data-theme='light'] .signup-link {
+    color: #555555;
+}
+
+/* 라이트 모드: 링크 */
+[data-theme='light'] .form-options a {
+    color: #555555;
+}
+
+[data-theme='light'] .form-options a:hover {
+    color: rgb(var(--red-glow));
+}
+
+/* 라이트 모드: 회원가입 토글 */
+[data-theme='light'] .signup-toggle {
+    color: #000000;
+}
+
+[data-theme='light'] .signup-toggle:hover {
+    color: rgb(var(--red-glow));
 }

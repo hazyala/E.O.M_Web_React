@@ -1,3 +1,7 @@
+/* ============================================
+   Cast 섹션 전체 레이아웃
+   ============================================ */
+
 /* 섹션 전체 컨테이너 */
 .cast-section {
     background-color: transparent;
@@ -7,14 +11,19 @@
     position: relative;
 }
 
-/* 무한 루프 슬라이드 영역 */
+
+/* ============================================
+   이미지 무한 롤링 영역
+   ============================================ */
+
+/* 캐스팅 카드 무한 루프 컨테이너 (overflow 처리) */
 .cast-carousel-wrapper {
     overflow: hidden;
     width: 100%;
     margin-bottom: 64px;
 }
 
-/* 무한 스크롤이 적용될 실제 트랙 */
+/* 애니메이션이 적용되는 실제 트랙 */
 .cast-track {
     display: flex;
     gap: 16px;
@@ -22,7 +31,7 @@
     animation: scroll-left 20s linear infinite;
 }
 
-/* 캐스팅 카드 틀 */
+/* 개별 캐스팅 카드 */
 .cast-card {
     width: 305px;
     height: 410px;
@@ -32,6 +41,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* 캐스팅 카드 이미지 (비율 유지하며 채우기) */
 .cast-card img {
     width: 100%;
     height: 100%;
@@ -39,15 +49,21 @@
     display: block;
 }
 
-/* 텍스트 영역 */
+
+/* ============================================
+   텍스트 및 버튼 영역
+   ============================================ */
+
+/* 텍스트 컨테이너 */
 .cast-content-wrapper {
     padding: 0 40px;
 }
 
-/* 제목 스타일 */
+/* 제목 */
 .cast-title {
     font-family: 'Roboto', sans-serif;
     font-size: 96px;
+    font-weight: 700;
     color: var(--text-color);
     text-align: center;
     letter-spacing: -1.92px;
@@ -56,7 +72,7 @@
     text-shadow: 0px 7px 10px var(--accent-shadow-cast);
 }
 
-/* 설명 스타일 */
+/* 설명 텍스트 */
 .cast-desc {
     font-family: 'Inter', sans-serif;
     font-size: 24px;
@@ -66,7 +82,12 @@
     margin-bottom: 40px;
 }
 
-/* 무한 스크롤 애니메이션 정의 */
+
+/* ============================================
+   무한 롤링 애니메이션
+   ============================================ */
+
+/* 왼쪽으로 계속 슬라이드하는 애니메이션 */
 @keyframes scroll-left {
     0% {
         transform: translateX(0);

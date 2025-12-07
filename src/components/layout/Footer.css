@@ -1,18 +1,33 @@
+/* ============================================
+   푸터 전체 레이아웃
+   ============================================ */
+
 /* 푸터 전체 컨테이너 */
 .footer {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 40px 40px 60px;
+
+    /* 상단 경계선 */
     border-top: 1px solid var(--border-color);
+
+    /* 레이아웃 설정 */
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    background-color: transparent;
     gap: 64px;
+
+    /* 배경 */
+    background-color: transparent;
 }
 
-/* 좌측: 로고 + 슬로건 + 아이콘 */
+
+/* ============================================
+   좌측 섹션: 로고 + 슬로건 + 아이콘
+   ============================================ */
+
+/* 로고 및 슬로건 컨테이너 */
 .footer-left {
     display: flex;
     flex-direction: column;
@@ -20,6 +35,7 @@
     width: 300px;
 }
 
+/* 로고 텍스트 */
 .footer-logo {
     font-family: "Irish Grover", cursive;
     font-size: 24px;
@@ -27,6 +43,7 @@
     transition: color 0.3s ease;
 }
 
+/* 슬로건 텍스트 */
 .footer-slogan {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -35,6 +52,7 @@
     transition: color 0.3s ease;
 }
 
+/* 아이콘 그룹 */
 .footer-icons {
     display: flex;
     gap: 16px;
@@ -43,12 +61,18 @@
     color: var(--text-color);
 }
 
+/* 개별 아이콘 hover 효과 */
 .footer-icons span {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-/* 우측: 메뉴 3단 */
+
+/* ============================================
+   우측 섹션: 너무 힘듬 x3 부분
+   ============================================ */
+
+/* 메뉴 열 컨테이너 */
 .footer-columns {
     display: flex;
     justify-content: space-between;
@@ -57,12 +81,14 @@
     text-align: left;
 }
 
+/* 각 메뉴 열 */
 .footer-column {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+/* 메뉴 열 제목 */
 .footer-column-title {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -72,6 +98,7 @@
     transition: color 0.3s ease;
 }
 
+/* 메뉴 링크 */
 .footer-column a {
     font-family: "Inter", sans-serif;
     font-size: 14px;
@@ -80,6 +107,7 @@
     transition: color 0.3s ease;
 }
 
+/* 메뉴 링크 hover 상태 */
 .footer-column a:hover {
     color: var(--text-color);
 }

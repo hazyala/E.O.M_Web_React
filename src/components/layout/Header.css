@@ -1,3 +1,7 @@
+/* ============================================
+   헤더 전체 레이아웃
+   ============================================ */
+
 /* 헤더 전체 컨테이너 */
 .header {
     position: fixed;
@@ -5,43 +9,55 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+
+    /* 레이아웃 */
     display: flex;
     align-items: center;
     padding: 16px 32px;
 
-    /* 테마 변수 적용: 배경색과 테두리 */
+    /* 배경 및 테두리 */
     background-color: var(--header-bg);
     border-bottom: 1px solid var(--border-color);
 
-    /* 유리 효과 (Blur) */
+    /* 유리 효과 */
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* 사파리 호환용 */
+    -webkit-backdrop-filter: blur(8px);
 
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* 로고 스타일 */
+
+/* ============================================
+   로고 영역
+   ============================================ */
+
+/* 로고 텍스트 */
 .logo {
     font-family: 'Irish Grover', cursive;
     font-size: 32px;
     color: var(--text-color);
     cursor: pointer;
     flex-shrink: 0;
+    user-select: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    user-select: none; /* 드래그 방지 */
 }
 
-/* 로고 호버 시 살짝 커지는 효과 */
+/* 로고 hover 상태: 확대 효과 */
 .logo:hover {
     transform: scale(1.05);
 }
 
-/* 네비게이션 바 */
+/* ============================================
+   네비게이션 바
+   ============================================ */
+
+/* 네비게이션 컨테이너 */
 .navbar {
     margin-left: auto;
     flex-shrink: 0;
 }
 
+/* 메뉴 목록 */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -51,57 +67,80 @@
     white-space: nowrap;
 }
 
+/* 메뉴 항목 */
 .navbar li {
     position: relative;
 }
 
-/* 메뉴 링크 스타일 */
+/* 메뉴 링크 기본 스타일 */
 .navbar a {
     display: inline-block;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 600;
     color: var(--text-color);
     text-decoration: none;
-    padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
 
-/* 링크 호버 시: 색상 반전 */
+/* 메뉴 링크 hover 상태: 색상 반전 */
 .navbar a:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
 }
 
-/* 서브타이틀 */
+
+/* ============================================
+   서브타이틀 (메뉴 호버 시 표시)
+   ============================================ */
+
+/* 서브타이틀 기본 스타일 */
 .subtitle {
     display: block;
     font-size: 11px;
     font-family: 'Inter', sans-serif;
+    font-weight: 400;
     color: var(--sub-text-color);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    /* 위치 지정 (메뉴 아래에 표시) */
     position: absolute;
     top: 115%;
     left: 50%;
     transform: translateX(-50%) translateY(-10px);
     white-space: nowrap;
+
+    /* 초기 숨김 상태 */
+    opacity: 0;
     pointer-events: none;
     z-index: 999;
-    font-weight: 400;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.theme-toggle-button{
-    font-size: 20px;
-    z-index: 1000;
-    padding-top: 3px;
-}
-.theme-toggle-button:hover {
-    transform: scale(1.25);
-}
-
-/* 메뉴에 마우스 올리면 서브타이틀 호버 */
+/* 메뉴 hover 시 서브타이틀 표시 */
 .navbar li:hover .subtitle {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+
+/* ============================================
+   테마 토글 버튼
+   ============================================ */
+
+/* 테마 토글 버튼 스타일 */
+.theme-toggle-button {
+    font-size: 20px;
+    padding-top: 3px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* 테마 토글 버튼 hover 상태: 확대 */
+.theme-toggle-button:hover {
+    transform: scale(1.25);
 }

@@ -1,31 +1,22 @@
+// ============================================
+// LinkSection 컴포넌트 : 커뮤니티 관련 좌우 텍스트 + 중앙 버튼 + 배경 이미지를 통합 레이아웃으로 표시
+// ============================================
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { slideInLeftVariant, slideInRightVariant, fadeUpVariant } from '../../styles/Animations';
+import Button from '../../components/common/Button';
 import './LinkSection.css';
 
 export default function LinkSection() {
-
-    // 텍스트 블록 등장 애니메이션
-    const leftTextVariant = {
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
-    };
-
-    // 텍스트 블록 등장 애니메이션
-    const rightTextVariant = {
-        hidden: { opacity: 0, x: 50 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
-    };
-
-    // 중앙 버튼 등장 애니메이션
-    const buttonVariant = {
-        hidden: { opacity: 0, scale: 0.8 },
-        visible: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.5 } }
-    };
+    // ============================================
+    // UI 렌더링
+    // ============================================
 
     return (
         <section id="link" className="link-section">
 
-            {/* 1. 배경 이미지 */}
+            {/* 배경 이미지: 확대/축소 애니메이션으로 등장 */}
             <motion.div
                 className="link-background"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -38,48 +29,45 @@ export default function LinkSection() {
                 />
             </motion.div>
 
-            {/* 2. 중앙 컨텐츠 */}
+            {/* 중앙 콘텐츠: 좌측 텍스트 + 중앙 버튼 + 우측 텍스트 */}
             <div className="link-content">
 
-                {/* 2-1. 좌측 텍스트 (Practice, Together) */}
+                {/* 좌측 텍스트: 왼쪽에서 슬라이드 진입 */}
                 <motion.div
                     className="link-left"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={leftTextVariant}
+                    variants={slideInLeftVariant(0.8)}
                 >
                     <div className="title">Practice,<br />Together</div>
-                    <div className="desc">함께 연습할 사람, 지금 찾기</div>
+                    <div className="desc">함께 연습할 사람, 지금 찾기.</div>
                 </motion.div>
 
-                {/* 2-2. 중앙 버튼 (LINK) */}
+                {/* 중앙 버튼: 페이드업 애니메이션으로 등장 */}
                 <motion.div
                     className="button-wrapper"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={buttonVariant}
+                    variants={fadeUpVariant(0.6)}
                 >
-                    <motion.button
-                        className="show-button"
-                        whileHover={{ scale: 1.1, backgroundColor: '#ffffff', color: '#000000' }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        LINK
-                    </motion.button>
+                    <Button
+                        text="LINK"
+                        onClick={() => console.log('Link button clicked')}
+                    />
                 </motion.div>
 
-                {/* 2-3. 우측 텍스트 (Drop It) */}
+                {/* 우측 텍스트: 오른쪽에서 슬라이드 진입 */}
                 <motion.div
                     className="link-right"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={rightTextVariant}
+                    variants={slideInRightVariant(0.8)}
                 >
                     <div className="title">Drop It</div>
-                    <div className="desc">당신의 말이 씬을 만듭니다</div>
+                    <div className="desc">당신의 말이 씬을 만듭니다.</div>
                 </motion.div>
             </div>
         </section>
