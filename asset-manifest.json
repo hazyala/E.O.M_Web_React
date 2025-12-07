@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/E.O.M_Web_React/static/css/main.cf2216b2.css",
+    "main.js": "/E.O.M_Web_React/static/js/main.1fbf1782.js",
+    "static/media/login.jpg": "/E.O.M_Web_React/static/media/login.c827b562c67a476e1f7c.jpg",
+    "index.html": "/E.O.M_Web_React/index.html",
+    "main.cf2216b2.css.map": "/E.O.M_Web_React/static/css/main.cf2216b2.css.map",
+    "main.1fbf1782.js.map": "/E.O.M_Web_React/static/js/main.1fbf1782.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf2216b2.css",
+    "static/js/main.1fbf1782.js"
+  ]
+}
