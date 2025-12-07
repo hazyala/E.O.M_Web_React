@@ -20,19 +20,31 @@
 > 주요 섹션별 UI와 분위기를 보여주는 스크린샷입니다.
 
 <p align="center">
-  <img src="./README/1.jpg" width="800" />
+  <img src="./README/1.png" width="800" />
 </p>
 
 <p align="center">
-  <img src="./README/2.jpg" width="800" />
+  <img src="./README/2.png" width="800" />
 </p>
 
 <p align="center">
-  <img src="./README/3.jpg" width="800" />
+  <img src="./README/3.png" width="800" />
 </p>
 
 <p align="center">
-  <img src="./README/4.jpg" width="800" />
+  <img src="./README/4.png" width="800" />
+</p>
+
+<p align="center">
+  <img src="./README/5.png" width="800" />
+</p>
+
+<p align="center">
+  <img src="./README/6.png" width="800" />
+</p>
+
+<p align="center">
+  <img src="./README/7.png" width="800" />
 </p>
 
 ---
